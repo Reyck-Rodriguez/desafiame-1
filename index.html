@@ -8,31 +8,37 @@
     <link rel="stylesheet" href="css.css">
 </head>
 <body>
-<img class="logo" src="./asset/Logo.png" alt="logo de una A de Alura Latam" >
-<div>
-    <div class="pagina">
-        
-    <!-- aquí ponemos el rectángulo -->
-    <div class="container1">
-        
-
-    <!-- aquí va lo que el usuario ingresa -->
-    <textarea class="texuser" id="texuser" placeholder="Ingresa texto aquí mi perrito " ></textarea>
-
-    <!-- botones interactivos -->
-    <button onclick="">cifrar</button>
-    <button onclick="">Desencriptar</button> 
-</div>
-    <!-- aquí va el segundo rectángulo con la imagen del muñekolis y la caja de texto -->
-    <div class="container2">
-        <div class="rectangulo">
-            <img class="imagenMuñekolas" src="./asset/Muñeco.png" alt="chico arrodillado con lupa " >
-            <textarea class="cuadroTexto" id="text-area" placeholder="aquí tu texto"></textarea>
+    <img class="logo" src="./asset/Logo.png" alt="logo de una A de Alura Latam" >
+    
+        <div class="pagina">
             
+
+            <!-- aquí ponemos el rectángulo que contendra todos los items interativos-->
+            <div class="container1">
+                <!-- aquí va lo que el usuario ingresa -->
+                <input class="texuser" id="texuser" placeholder="Ingresa texto aquí mi perrito " ></input>
+                <div class="container1_exclamacion">
+                    <img class="container1_exclamacion_img"src="asset/bi_exclamation-circle-fill.png" alt="simbolo de exclamacion relleno">
+                    <p class="container1_exclamacion_texto">solo letras y minusculas</p>
+                </div>
+                <div class="container1_botones">
+                    <!-- botones interactivos de usuario-->
+                    <button class="boton1" onclick="">encriptar</button>
+                    <button class="boton2" onclick="">Desencriptar</button> 
+                </div>
+            </div>
+            <div class="container2">
+                <!-- aquí va el segundo rectángulo con la imagen del muñekolis y la caja de texto -->
+                <div class="rectangulo">
+                    <img class="imagenMuñekolas" src="./asset/Muñeco.png" alt="chico arrodillado con lupa " >
+                    <textarea class="cuadroTexto" id="text-area" placeholder="aquí tu texto encriptado " disabled></textarea>
+                </div>
+            <div>
+            
+            </div>
         </div>
-        
     </div>
-</div>
-</div>
+    <!-- aqui llamo al app de java script-->
+    <script src="app.js"></script> 
 </body>
 </html>

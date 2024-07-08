@@ -1,39 +1,76 @@
+/*importacion de fuente */
+@font-face {
+    font-family: 'Inter';
+    src: href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 body {
-    font-family: Arial, sans-serif;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100vh;
+    background: rgba(243, 245, 252, 1);
+    
 }
 
 .pagina {
     display: flex; 
     flex-direction: row; 
-    align-items: center;
-    justify-content: center;
     width: 100%;
-    max-width: 800px;
-    margin-bottom: 20px;
+    
+    
 }
 
 .container1 {
     display: flex;
     flex-direction: column; 
-    align-items: center;
-    justify-content: center;
+    
     width: 100%; 
     max-width: 600px;
     margin: 20px;
 }
+.container1_exclamacion{
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    margin-top: 348px;
+    gap: 5px;
+    
+}
+
+.container1_exclamacion_img{
+    width: 15px;
+    height: 15px;
+    display: flex;
+}
+.container1_exclamacion_texto {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+}
+.container1_botones{
+    display: flex;
+    flex-direction: row;
+}
 
 .texuser{
+
     width: 100%;
-    height: 100%;
+    height: 500%;
     top: 168px;
     left: 240px;
     gap: 0px;
     opacity: 0px;
+    border: none;
+    resize: none;
+    overflow: hidden;
+
 }
 
 .container2 {
@@ -43,6 +80,7 @@ body {
     width: 100%;
     max-width: 600px;
     margin: 20px;
+    margin-left: 28%;
 }
 .container2 p {
     margin: 10px 0 0;
@@ -51,15 +89,12 @@ body {
 }
 
 .logo {
-    justify-content: flex-start;
+    
     width: 120px; 
     height: 48px; 
-    top: 600px; 
-    left: 40px; 
     gap: 40px; 
-    opacity: 0px; 
-    border-radius: 50%;
     margin-bottom: 20px;
+    margin-top: 40px;
 }
 
 .rectangulo{
@@ -69,8 +104,7 @@ body {
     height: 500px;
     top: 40px;
     left: 1000px;
-    
-    background-color: #F8F8F8;
+    background: rgba(255, 255, 255, 1);
     border-radius: 32px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 20px;
@@ -93,19 +127,34 @@ body {
     height: 85%;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #000000;
+    border: 1px solid #0000;
 }
 
-button {
+.boton1 {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #000000;
+    background-color: rgba(10, 56, 113, 1);
     color: #FFFFFF;
     cursor: pointer;
     margin: 10px;
 }
+.boton2 {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(22, 69, 126, 0.453);
+    color: #FFFFFF; 
+    cursor: pointer;
+    margin: 10px;
+    
+}
 
-button:hover {
-    background-color: #333333;
+.boton1:hover {
+    background-color: #74ff34;
+    
+}
+
+.boton2:hover {
+    background-color: #490202cb;
 }
