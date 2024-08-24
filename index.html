@@ -1,31 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css.css">
-    <title>Decodificar</title>
-</head>
-<body>
-    <div class="notification_copy inactive">Copiado en el cortapapeles</div>
-    <img class="logo" src="./asset/Logo.png"Alura">
-    <div class="container" id="container">
-        <div class="codificado" id="codificado">
-            <textarea type="text" id="texto_decode" placeholder="Ingresa un texto aqui" pattern="\w"></textarea>
-            <footer><img class="imagenexcla"  src="./asset/bi_exclamation-circle-fill.png"> letras minúsculas y sin acentos</footer>
-            <div class="buttons">
-                <button class="boton1"id="encriptar_btn" class="encriptar_btn">Encriptar</button>
-                <button class="boton2"id="desencriptar_btn" class="desencriptar_btn">Desencriptar</button>
-            </div>
+<html lang="es">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafio Codificador Alura Latam</title>
+  </head>
+  <body>
+    <header class="navbar">
+      <nav class="search">
+        <div class="logo">
+          <a href="index.html" class="logo">
+            <img src="assets/Logo.png" alt="Logo-alura">
+          </a>
         </div>
-        <div class="decodificar" id="decodificar">
-            <div class="no_executed">
-                <img src="./asset/Muñeco.png" alt="Muñeco">
-                <h1>Ningún mensaje fue encontrado</h1>
-                <p>Ingresa el texto que desees encriptar o desencriptar.</p>
-            </div>
+        
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="container-button">
+        <form class="alurainput">
+          <textarea id="texto" class="input1" type="text" placeholder="Ingresa un texto para Encriptar o desencriptar..."></textarea>
+        </form>
+        <div class="adv-container">
+          <img class="advertencia" src="assets/advertencia.png" alt="advertencia">
+          <p class="adv-text">Solo letras minusculas y sin acentos. </p>
         </div>
-    </div>
-    <script src="app.js"></script>
-</body>
+
+        <section class="button-container">
+          <button id="codificar" class="boton1">Encriptar</button>
+          <button id="descodificar" class="boton2">Desencriptar</button>
+        </section>
+      </div>
+      <section class="des-container">
+        <form id="resultado" class="alurainput2">
+          <img id="muñeco-espera" class="imagen-muñeco" src="./assets/Muñeco.png" alt="muñeco">
+          <p id="texto-espera" class="letra1">Ningun mensaje fue encontrado</p>
+          <p id="texto-espera-2" class="letra2">Ingresa el texto que deseas encriptar o desencriptar.</p>
+        </form>
+      </section>
+    </main>
+  </body>
+
+  <script src="./script.js"></script>
 </html>
