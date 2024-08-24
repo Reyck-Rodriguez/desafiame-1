@@ -1,65 +1,90 @@
-const decodificado = document.getElementById("decodificar");
-const textarea = document.getElementById("texto_decode");
-const btnEncriptar = document.getElementById("encriptar_btn");
-const btnDesencriptar = document.getElementById("desencriptar_btn");
+const input = document.getElementById("texto");
+const codificarBoton = document.getElementById("codificar");
+const resultadoInput = document.getElementById("resultado");
+const imagenEspera = document.getElementById("muñeco-espera");
+const textoEspera = document.querySelectorAll("#texto-espera, #texto-espera-2");
+const decodificarBoton = document.getElementById("descodificar");
 
-function encriptar(msg){
-    let newMsg=msg.replaceAll('e', 'enter').replaceAll('i', 'imes').replaceAll('a', 'ai').replaceAll('o', 'ober').replaceAll('u', 'ufat');
-    console.log(newMsg);
-    return newMsg;
+codificarBoton.addEventListener("click", () => {
+  const texto = input.value.trim();
+  if (texto !== "" && esTextoValido(texto)) { 
+     const codificado = codificarTexto(texto); 
+     mostrarResultado(codificado);
+  } else {   
+ alert("Por favor, ingrese solo letras minúsculas sin símbolos.");
+  
 }
-
-function desencriptar(msg){
-    let newMsg=msg.replaceAll('ai', 'a').replaceAll('enter', 'e').replaceAll('ufat', 'u').replaceAll('imes', 'i').replaceAll('ober', 'o');
-    console.log(newMsg);
-    return newMsg;
-}
-
-function mostrarResultado(modo){
-    if(textarea.value!=="")
-        {
-            decodificado.innerHTML=`
-            <div class="textoD" id="textoD">
-                <p>${modo==="encriptar" ? encriptar(textarea.value) : desencriptar(textarea.value)}</p>
-            </div>
-            <button class="copiar" id="copiar">Copiar</button>`;
-            
-            
-            const texto = document.getElementById("textoD").innerText;
-            const btnCopiar = document.getElementById("copiar");
-            
-            const copiarContenido = async () => {
-                try {
-                await navigator.clipboard.writeText(texto);
-                } catch (err) {
-                console.error('Error al copiar: ', err);
-                }
-            }
-    
-            btnCopiar.addEventListener("click", e => {
-                copiarContenido();
-                document.querySelector('.notification_copy').classList.toggle('inactive');
-                setTimeout(()=> document.querySelector('.notification_copy').classList.toggle('inactive'), 2000)
-            })
-        }
-}
-
-btnEncriptar.addEventListener('click', e => {
-    mostrarResultado('encriptar');
 });
 
-btnDesencriptar.addEventListener('click', e => {
-    mostrarResultado('desencriptar');
-})
-  
-  function validarCaracteres(texto) {
-    const regex = /[0-9\u0300-\u036f\u1E00-\u1EFF\u2000-\u303F\u3040-\u309F\u30A0-\u30FF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\u9FFF\uAC00-\uD7AF\uF900-\uFAFF\äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ]/;
-    return regex.test(texto);
+decodificarBoton.addEventListener("click", () => { 
+ const textoCodificado = input.value.trim(); 
+ if (textoCodificado !== " " && esTextoValido(textoCodificado)) {  
+  const descodificado = decodificarTexto(textoCodificado);    mostrarResultado(descodificado);  
+} else { 
+   alert("Por favor, ingrese solo letras minúsculas sin símbolos.");  }});
+
+function mostrarResultado(resultado) {
+  if (resultado) {
+    resultadoInput.innerHTML = `
+   
+        <textarea id="texto-codificado" class="input2" readonly >${resultado}</textarea>
+            <button id="copiar" class="boton3">Copiar</button>
+
+    
+        `;
+
+    const copiarBoton = document.getElementById("copiar");
+    copiarBoton.addEventListener("click", () => {
+      navigator.clipboard
+        .writeText(resultado)
+        .then(() => alert("Texto copiado al portapapeles"))
+        .catch((err) => console.error("Error al copiar el texto: ", err));
+    });
+
+    imagenEspera.style.display = "none";
+    textoEspera.forEach((el) => (el.style.display = "none"));
+  } else {
+    resultadoInput.innerHTML = "";
+    imagenEspera.style.display = "block";
+    textoEspera.forEach((el) => (el.style.display = "block"));
   }
-  
-  // Uso de la función
-  textarea.addEventListener('keydown', e => {
-    if (validarCaracteres(e.key)) {
-      e.preventDefault();
-    }
-  });
+}
+
+function codificarTexto(texto) {
+  const vocales = {
+    a: "ai",
+    e: "enter",
+    i: "imes",
+    o: "ober",
+    u: "ufat",
+  };
+
+  const palabras = texto.split(" ");
+  const codificadas = palabras.map((palabra) =>
+    palabra
+      .split("")
+      .map((char) => vocales[char] || char)
+      .join("")
+  );
+
+  return codificadas.join(" ");
+}
+
+
+function decodificarTexto(textoCodificado) {
+  const vocales = {
+    ai: "a",
+    enter: "e",
+    imes: "i",
+    ober: "o",
+    ufat: "u",
+  };
+  for (let codificar in vocales) {
+    textoCodificado = textoCodificado.replaceAll(codificar, vocales[codificar]);
+  }
+  return textoCodificado;
+}
+
+function esTextoValido(texto) {
+  return /^[a-z\s]+$/i.test(texto);
+}
