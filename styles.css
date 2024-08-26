@@ -18,22 +18,17 @@
 a{
   text-decoration: none;
 }
-
-
 .search {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-
 .logo {
   width: 120px;
   height: 48px;
   margin: 40px;
-  
 }
-
 .container {
   display: flex;
   justify-content: space-between;
@@ -63,13 +58,11 @@ a{
 ::placeholder {
   color: #0a3871;
 }
-
 .adv-container {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
-  flex-direction: row;
 }
 
 .advertencia {
@@ -90,11 +83,70 @@ a{
   line-height: 28.8px;
   display: flex;
 }
-.botones {
+.alurainput2 {
+  height: 600px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-right: 100px;
+  margin-left: 100px;
+  box-shadow: -5px 5px 5px rgb(204, 203, 203);
+  background-color: #fafafa;
+}
+.input2 {
+  width: 400px;
+  margin: 20px;
+  height: 350px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 48px;
+  color: #0a3871;
+  resize: none;
+  background-color: #fafafa;
+}
+.letra1 {
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28.8px;
+  background-color: #fafafa;
+}
+.letra2 {
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #fafafa;
+}
+.imagen-muñeco {
+  padding: 30px;
+  background-color: #fafafa;
+}
+
+.des-container{
+  border-radius: 20px;
+}
+:root {
+  --border-radius: 2rem;
+ 
+  --glow-size: 0.5rem;
+}
+
+.button-container{
   display: flex;
-  flex-direction: row;
   gap: 24px;
-  font-size: medium;
+  justify-content: center;
 }
 .boton2 {
   padding: 10px 20px;
@@ -136,83 +188,42 @@ a{
   padding: 10px 20px;
   border: none;
   border-radius: 20px;
-  background-color: rgba(10, 56, 113, 1);
-  color: #FFFFFF;
+  background-color: rgb(63, 101, 147);
+  color: #000000;
   width: 328px;
   height: 67px;
   cursor: pointer;
+  
+}
+
+@keyframes glow {
+  0% {
+      background-position: 0 0;
+  }
+
+  50% {
+      background-position: 300% 0;
+  }
+
+  100% {
+      background-position: 0 0;
+  }
+}
+
+.boton1,.boton2, .boton3 {
+  width: 328px;
+  height: 67px;
+  
+  padding: 24px;
+  gap: 8px;
 
 }
+
 .button-container{
   display: flex;
-  gap: 24px;
-  justify-content: center;
-}
-
-.alurainput2 {
-  height: 600px;
-  display: grid;
-  justify-content: center;
   align-items: center;
-  align-content: center;
-  justify-items: center;
-  border-radius: 20px;
-  margin-top: 10px;
-  margin-right: 100px;
-  margin-left: 100px;
-  box-shadow: -5px 5px 5px rgb(204, 203, 203);
-  background-color: #fafafa;
 }
 
-.input2 {
-  width: 400px;
-  margin: 20px;
-  height: 350px;
-  border: none;
-  border-radius: 20px;
-  outline: none;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 48px;
-  color: #0a3871;
-  resize: none;
-  background-color: #fafafa;
-}
-
-
-.letra1 {
-  text-align: center;
-  font-family: "Inter", sans-serif;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 28.8px;
-  background-color: #fafafa;
-}
-
-.letra2 {
-  text-align: center;
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  margin-left: 10px;
-  margin-right: 10px;
-  background-color: #fafafa;
-}
-
-.imagen-muñeco {
-  padding: 30px;
-  background-color: #fafafa;
-}
-
-.des-container{
-  border-radius: 20px;
-}
-
-.footer-container {
-  text-align: center;
-  font-family: "Inter", sans-serif;
-}
 
 @media (max-width: 768px) {
   * {
@@ -232,7 +243,7 @@ a{
   height: 400px;
   margin-top: 10px;
   margin:20px;
-  max-width: 750px;
+  max-width: 688px;
   margin: 0 auto;
 }
 
@@ -263,7 +274,7 @@ a{
   margin: 0 auto;
   display: flex;
   flex-direction: column;
- 
+  
 }
 
 .input2 {
@@ -281,7 +292,6 @@ a{
   resize: none;
   border-radius: 20px;
 }
-
 
 .letra1 {
   font-weight: 400;
@@ -303,13 +313,6 @@ a{
   display: none;
 }
 
-.footer-container {
-  text-align: center;
-  font-family: "Inter", sans-serif;
-  justify-content: center;
-  margin: 10px;
-}
-
 .des-container{
   max-width: 650px;
   max-height: 250px;
@@ -318,81 +321,54 @@ a{
   margin-bottom: 20px;
 
 }
+.boton1,.boton2 {
+  width: 250px;
+  height: 67px;
+  
+  padding: 24px;
+  gap: 8px;
+
 }
 
+.boton3{
 
-@media (max-width: 425px) {
+  width: 624px;
+  height: 67px;
+  margin: 10px;
+  color: #000000;
+  border: 1px solid #0A3871;
+}
 
-  .container {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  }
-
-
-.logo{
-  margin: 5px;
-  }
-
-.alurainput {
-  height: 400px;
-  margin-top: 10px;
-  margin:20px;
-  max-width: 450px;
-  margin: 0 auto;
-  }
-
-.input1 {
-  width: 350px;
-  margin: 20px;
-  height: 350px;
+.boton3:after  {
+  background: #E9ECF8;
  
-  }
-
-.advertencia {
-  height: 16px;
-  width: 16px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 20px;
-  }
-.adv-text {
-  margin-top: 12px;
-  margin-bottom: 10px;
-  margin-left: 10px;
-  }
-
-.alurainput2 {
-  max-width: 1200px;
-  height: auto;
-  width: auto;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-
+}
+.boton1, .boton3 {
   
-  }
-
-.input2 {
-  width: 400px;
-  margin-top: 50px;
-  height: 133px;
-  border: none;
-  margin-left: 50px;
-  outline: none;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 48px;
-  color: #0a3871;
-  resize: none;
-  border-radius: 20px;
-  }
-
+  margin-left: 0px;
+  min-width: 10rem;
+  min-height: 3rem;
 }
 
-@media (max-width: 380px) {
+.boton2 {
   
+  font-size: 16px;
+  line-height: 19.36px;
+  margin-left: 0px;
+  min-width: 10rem;
+  min-height: 3rem;
+ 
+}
+.button-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+}
+
+
+
+@media (max-width: 376px) {
   
   .logo{
     margin: 5px;
@@ -410,7 +386,6 @@ a{
     width: 300px;
     margin: 20px;
     height: 350px;
-   
   }
   
   .advertencia {
@@ -434,6 +409,7 @@ a{
     flex-direction: column;
     justify-content: center;
   
+    
   }
   
   .input2 {
@@ -451,4 +427,55 @@ a{
     resize: none;
     border-radius: 20px;
   }
-  }  
+  .boton1,.boton2 {
+    width: 280px;
+    height: 67px;
+    
+    padding: 24px;
+    gap: 8px;
+
+}
+
+.boton3{
+
+    width: 280px;
+    height: 67px;
+    margin: 10px;
+    color: #000000;
+    border: 1px solid #0A3871;
+}
+
+.boton3:after  {
+    background: #E9ECF8;
+   
+}
+.boton1, .boton3 {
+    
+    margin-left: 0px;
+    min-width: 10rem;
+    min-height: 3rem;
+    margin: 10px;
+}
+
+.boton2 {
+    
+    font-size: 16px;
+    line-height: 19.36px;
+    margin-left: 0px;
+    min-width: 10rem;
+    min-height: 3rem;
+    margin: 10px;
+   
+}
+.button-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin:10px;
+}
+
+
+}
+
+
